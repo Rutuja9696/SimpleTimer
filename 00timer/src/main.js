@@ -1,71 +1,71 @@
+//value limit set for timer
 let seconds = 10;
 let minutes = 0;
 let hours = 0;
 
-let displaySeconds = 0;
-let displayMinutes = 0;
-let displayHours = 0;
+let showSeconds = 0;
+let showMinutes = 0;
+let showHours = 0;
 
 let interval = null;
-
+//initial status
 let status = "stopped";
-//Stopwatch function (logic to determine when to increment next value)
-function stopWatch() {
-  //
+//decrementing the set value
+//decrement sec
+function timer() {
   seconds--;
+  //decrement min
   if (seconds < 0) {
     seconds = 59;
     minutes--;
+    //decrement hr
     if (minutes < 0) {
       minutes = 59;
       hours--;
-      if (hours < 0) {
-        hours = 0;
-        minutes = 0;
-        seconds = 0;
-        document.getElementById("display").innerHTML = "00:00:00 Timer Expired";
-      }
+      //display msg on time out
+      // if (hours < 0) {
+      //   hours = 0;
+      //   minutes = 0;
+      //   seconds = 0;
+      //   document.getElementById("show").innerHTML = "00:00:00 Timer Expired";
+      // }
     }
   }
-  //If seconds/minutes/hours are only one digit, add a leading 0 to the value
+  //add a 0 tens place when time is single digit
   if (seconds < 10) {
-    displaySeconds = "0" + seconds.toString();
+    showSeconds = "0" + seconds.toString();
   } else {
-    displaySeconds = seconds;
+    showSeconds = seconds;
   }
   if (minutes < 10) {
-    displayMinutes = "0" + minutes.toString();
+    showMinutes = "0" + minutes.toString();
   } else {
-    displayMinutes = minutes;
+    showMinutes = minutes;
   }
   if (hours < 10) {
-    displayHours = "0" + hours.toString();
+    showHours = "0" + hours.toString();
   } else {
-    displayHours = hours;
+    showHours = hours;
   }
-  //Display updated time values to user
-  document.getElementById("display").innerHTML =
-    displayHours + ":" + displayMinutes + ":" + displaySeconds;
+  //concatenated output
+  document.getElementById("show").innerHTML =
+    showHours + ":" + showMinutes + ":" + showSeconds;
 }
+//click to start timer
 function start() {
-  if (status === "stopped")
-    //Sart the stopwatch (by calling the setInterval() function)
-    interval = window.setInterval(stopWatch, 1000);
+  if (status === "stopped") interval = window.setInterval(timer, 1000);
   document.getElementById("start");
-  status = "started";
 }
+//pause to pause timer
 function pause() {
   window.clearInterval(interval);
-  document.getElementById("stop");
-  status = "stopped";
+  document.getElementById("pause");
 }
-//Function to reset the stopwatch
+// resetting timer
 function reset() {
   window.clearInterval(interval);
-  seconds = 60;
-  minutes = 1;
+  seconds = 10;
+  minutes = 0;
   hours = 0;
-  document.getElementById("display").innerHTML = "00:1:00";
-  document.getElementById("start").innerHTML = "Start";
-  // document.getElementById("stop").innerHTML = "stop";
+  document.getElementById("show").innerHTML = "00:00:10";
 }
