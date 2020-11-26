@@ -8,6 +8,7 @@ This is a simple timer that starts from the set time and decrements upto 0. It c
 
 3.Demo:
 This is the demo link to view the program output:-
+  https://rutuja9696.github.io/SimpleTimer/
 
 4.Technologies Used:
   -HTML
