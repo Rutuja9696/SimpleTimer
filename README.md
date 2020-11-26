@@ -10,23 +10,23 @@ This is a simple timer that starts from the set time and decrements upto 0. It c
 This is the demo link to view the program output:-
 
 4.Technologies Used:
--HTML
--css
--javascrpit
+  -HTML
+  -css
+  -javascrpit
 
 6.Technical Description :
 Following tags and stylings were used to built this program:
 -Markup
-a.html
-b.body
-c.h1
-d.button
-e.br
-f.div
+    a.html
+    b.body
+    c.h1
+    d.button
+    e.br
+    f.div
 -Style
-a.color
-b.alignment
-c.flex
-d.boder
-e.font size
-f.padding
+    a.color
+    b.alignment
+    c.flex
+    d.boder
+    e.font size
+    f.padding
