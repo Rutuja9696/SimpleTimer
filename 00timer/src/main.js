@@ -9,7 +9,7 @@ let displayHours = 0;
 let interval = null;
 
 let status = "stopped";
-//Stopwatch function (logic to determine when to increment next value, etc.)
+//Stopwatch function (logic to determine when to increment next value)
 function stopWatch() {
   //
   seconds--;
