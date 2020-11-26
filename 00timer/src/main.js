@@ -22,13 +22,13 @@ function timer() {
     if (minutes < 0) {
       minutes = 59;
       hours--;
-      //display msg on time out
-      // if (hours < 0) {
-      //   hours = 0;
-      //   minutes = 0;
-      //   seconds = 0;
-      //   document.getElementById("show").innerHTML = "00:00:00 Timer Expired";
-      // }
+      // display msg on time out
+      if (hours < 0) {
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+        document.getElementById("show").innerHTML = "00:00:00 Timer Expired";
+      }
     }
   }
   //add a 0 tens place when time is single digit
@@ -65,7 +65,7 @@ function pause() {
 function reset() {
   window.clearInterval(interval);
   seconds = 10;
-  minutes = 0;
+  minutes = 00;
   hours = 0;
   document.getElementById("show").innerHTML = "00:00:10";
 }
